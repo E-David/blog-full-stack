@@ -23,7 +23,7 @@ const Header = React.createClass({
 		return (
 			<header>
 				<a href="#home">
-					<h2>Lorem Ipsum Blog Site</h2>
+					<h1>Lorem Ipsum Blog Site</h1>
 				</a>
 				<div className="user-nav">
 					<button onClick={this._dashboardHashChange} style={dashDisplay}>My Dashboard</button>

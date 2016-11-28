@@ -1,6 +1,7 @@
 import React from "React"
 import STORE from "../store"
 import ACTIONS from "../actions"
+import User from "../models/userModel"
 
 const PostsContainer = React.createClass({
 	_makePosts: function(postModel) {
@@ -43,6 +44,7 @@ const PostModel = React.createClass({
 							}
 						</p>
 					</div>
+					{ User.getCurrentUser() && (<button onClick={ACTIONS.remove_post(postModel)}>Delete</button>}
 					<button>+</button>
 				</div>
 				<p className="post-content" style={focusPostStyle}>{postModel.get("content")}</p>

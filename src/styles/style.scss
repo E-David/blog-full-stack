@@ -34,17 +34,18 @@ button:active {
 
 header {
 	width: 100%;
-	text-align: center;
 	position: relative;
-	h2 {
+	h1 {
+		text-align: center;
 		margin: 0;
 	}
 	.user-nav {
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: 15px;
+		right: 4%;
 		button {
 			display: inline-block;
+			margin: 0px 10px;
 		}
 		button:first-child {
 			float: left;
