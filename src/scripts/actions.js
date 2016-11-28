@@ -22,14 +22,14 @@ const ACTIONS = {
 				 	}
 				 )
 	},
-	_getTimeElapsed: function(timePostCreated) {
+	getTimeCreated: function(timePostCreated) {
 		var then = new Date(timePostCreated),
 			now = new Date(),
 			millisecondsElapsed = (now-then)
 
-		return this._getTimeFromMilliseconds(millisecondsElapsed) + "ago"
+		return this.getTimeFromMilliseconds(millisecondsElapsed)
 	},
-	_getTimeFromMilliseconds: function(milliseconds) {
+	getTimeFromMilliseconds: function(milliseconds) {
 		var seconds = Math.floor(milliseconds / 1000),
 			minutes = Math.floor(seconds / 60),
 			hours = Math.floor(minutes / 60),
@@ -105,6 +105,7 @@ const ACTIONS = {
 				function(){
 					alert("You have successfully logged out")
 					location.hash = "home"
+					STORE._emitChange()
 				},
 				function(){
 					alert("An error occurred while logging out")
@@ -135,7 +136,7 @@ const ACTIONS = {
 				 	})
 	},
 	setFocusPost: function(modelId) {
-		STORE._set(focusPost,modelId)
+		STORE._set("focusPost",modelId)
 	}
 }
 

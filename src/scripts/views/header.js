@@ -3,9 +3,15 @@ import User from "../models/userModel"
 import ACTIONS from "../actions"
 
 const Header = React.createClass({
+	_dashboardHashChange: function() {
+		location.hash = "dashboard"
+	},
+	_loginHashChange: function() {
+		location.hash = "login"
+	},
 	_setLoginOrLogoutButton: function(){
 		if (!User.getCurrentUser()){
-			return <a href="#login">Login</a>
+			return <button id="login" onClick={this._loginHashChange}>Login</button>
 		} else {
 			return <button id="logout" onClick={ACTIONS.logoutUser}>Logout</button>
 		}
@@ -17,12 +23,10 @@ const Header = React.createClass({
 		return (
 			<header>
 				<a href="#home">
-					<h2>AskUsAnything</h2>
+					<h2>Lorem Ipsum Blog Site</h2>
 				</a>
 				<div className="user-nav">
-					<a href="#dashboard" style={dashDisplay}>
-						<h5>My Dashboard</h5>
-					</a>
+					<button onClick={this._dashboardHashChange} style={dashDisplay}>My Dashboard</button>
 					{this._setLoginOrLogoutButton()}
 				</div>
 			</header>

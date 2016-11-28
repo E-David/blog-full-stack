@@ -15,7 +15,7 @@ const PostsContainer = React.createClass({
 		return (
 			<div className="posts-container">
 				<ul className="post-list">
-					{this.props.collection.map(this._makePosts)}
+					{this.props.collection.map(this._makePosts).reverse()}
 				</ul>
 			</div>
 		)
@@ -29,15 +29,19 @@ const PostModel = React.createClass({
 	render: function() {
 		var postModel = this.props.model
 		var focusPostStyle = {
-			height: postModel.get("_id") === this.props.focusPost ? "auto" : 0
+			height: postModel.get("_id") === this.props.focusPost ? "auto" : 0,
+			display: postModel.get("_id") === this.props.focusPost ? "block" : "none"
 		}
 		return (
 			<li>
 				<div className="post-header" onClick={this._togglePost}>
 					<h3>{postModel.get("title")}</h3>
 					<div className="post-details">
-						<h4>{`Post by ${postModel.get("email")}`}</h4>
-						<h4>{ACTIONS.displayTimeCreated(postModel.get("createdAt"))}</h4>
+						<p>{`Post by ${postModel.get("username")}`}</p>
+						<p>{
+							`Created ${ACTIONS.getTimeCreated(postModel.get("createdAt"))} ago`
+							}
+						</p>
 					</div>
 					<button>+</button>
 				</div>

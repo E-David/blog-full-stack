@@ -28,8 +28,8 @@ const NewPostContainer = React.createClass({
 		return (
 			<div className="new-post-container">
 				<form onSubmit={this._handleSubmit}>
-					<input className="post-title" name="title"/>
-					<input className="post-content" name="content" />
+					<input className="post-title" name="title" placeholder="Write title here"/>
+					<textarea className="post-content" name="content" />
 					<button type="submit">Post</button>
 				</form>
 			</div>
