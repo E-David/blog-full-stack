@@ -10,7 +10,6 @@ const LoginView = React.createClass({
 				<LoginContainer />
 				<RegisterContainer />
 			</div>
-
 		)
 	}
 })
@@ -29,7 +28,7 @@ const LoginContainer = React.createClass({
 	render: function() {
 		return (
 			<div className="login-container">
-				<h4>Login Here</h4>
+				<h3>Login Here</h3>
 				<form onSubmit={this._handleSubmit}>
 					<input type="email" name="email" placeholder="Enter Email" />
 					<input type="password" name="password" placeholder="Enter Password" />
@@ -55,7 +54,7 @@ const RegisterContainer = React.createClass({
 	render: function() {
 		return (
 			<div className="register-container">
-				<h4>Register Here</h4>
+				<h3>Register Here</h3>
 				<form onSubmit={this._handleSubmit}>
 					<input type="email" name="email" placeholder="Enter Email" />
 					<input type="password" name="password" placeholder="Enter Password" />

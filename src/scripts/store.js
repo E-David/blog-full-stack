@@ -4,7 +4,8 @@ import {PostCollection,PostModel} from "./models/dataModels"
 
 const STORE = _.extend(Backbone.Events,{
 	_data: {
-		postCollection: new PostCollection()
+		postCollection: new PostCollection(),
+		focusPost: null
 	},
 	_emitChange: function() {
 		this.trigger("storeChanged")
@@ -14,6 +15,9 @@ const STORE = _.extend(Backbone.Events,{
 	},
 	_getData: function() {
 		return this._data
+	},
+	_initialize: function() {
+		this._get("postCollection").on("update", () => this._emitChange())
 	},
 	_set: function(input,value) {
 		if(typeof input === "object") {
@@ -25,8 +29,9 @@ const STORE = _.extend(Backbone.Events,{
 		}
 		this._emitChange()
 	}
-
 })
+
+STORE._initialize()
 
 
 export default STORE

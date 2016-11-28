@@ -21,6 +21,8 @@ const NewPostContainer = React.createClass({
 			content: event.target.content.value
 		}
 		ACTIONS.createPost(newPostObj)
+		event.target.title.value = ""
+		event.target.content.value = ""
 	},
 	render: function() {
 		return (

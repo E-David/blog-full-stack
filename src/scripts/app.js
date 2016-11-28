@@ -16,32 +16,31 @@ const app = function() {
   		"dashboard": "handleDashboard",
   		"newpost": "handleNewPost",
   		"home": "handleHome",
-  		"myposts": "handleMyPosts",
   		"*default": "handleRedirect"
   	},
 	handleLogin: function() {
 		ReactDOM.render(<LoginView />, document.querySelector(".container"))
 	},
 	handleDashboard: function() {
+		if(!User.getCurrentUser()){
+			location.hash = "login"
+		}
 		ReactDOM.render(<DashboardView />, document.querySelector(".container"))
 	},
 	handleNewPost: function() {
+		if(!User.getCurrentUser()){
+			location.hash = "login"
+		}
 		ReactDOM.render(<NewPostView />, document.querySelector(".container"))
 	},
 	handleHome: function() {
 		ReactDOM.render(<HomeView />, document.querySelector(".container"))
-	},
-	handleMyPosts: function() {
-		ReactDOM.render(<MyPostsView />, document.querySelector(".container"))
 	},
 	handleRedirect: function() {
 		location.hash = "home"
 	},
 	initialize: function() {
 		Backbone.history.start()
-		if(!User.getCurrentUser()){
-			location.hash = "login"
-		}
 	}
   })
 
