@@ -35,13 +35,14 @@ button:active {
 header {
 	width: 100%;
 	position: relative;
+	padding: 2rem;
 	h1 {
 		text-align: center;
 		margin: 0;
 	}
 	.user-nav {
 		position: absolute;
-		top: 15px;
+		top: 2rem;
 		right: 4%;
 		button {
 			display: inline-block;
@@ -54,11 +55,12 @@ header {
 }
 
 .posts-container {
-	width: 90%;
-	margin: auto;
-	padding: 5% 2.5%;
+	width: 60%;
+	margin: 0 auto;
+	padding: 1rem 2rem;
 	text-align: center;
 	li {
+		padding: 1rem 2rem;
 		list-style: none;
 		margin: 0;
 		margin-bottom: 2.5%;
@@ -67,26 +69,26 @@ header {
 		.post-header {
 			border-bottom: 3px solid $secondary-color;
 			text-align: left;
-			padding-left: 2.5%;
+			padding: 1rem 2rem;
 			position: relative;
+			line-height: 2rem;
 			h3 {
 				font-size: 1.5rem;
 				display: inline-block;
 				width: 50%;
-				margin: 0;
+				margin: auto;
 			}
 			p {
 				font-size: 1rem;
 				display: inline-block;
-				width: 20%;
-				margin: 0;
+				margin: auto;
+				padding-right: 2rem;
 			}
 			button {
 				background-color: $primary-color;
 				font-size: 1rem;
-				position: absolute;
-				top: 10px;
-				right: 10px;
+				display: inline-block;
+				margin-right: 2rem;
 			}
 			.post-details h4 {
 				display: inline-block;

@@ -104,7 +104,7 @@ const ACTIONS = {
 			.then(
 				function(){
 					alert("You have successfully logged out")
-					location.hash = "home"
+					location.hash = "login"
 					STORE._emitChange()
 				},
 				function(){
@@ -129,6 +129,7 @@ const ACTIONS = {
 				 .then(
 				 	function(){
 				 		alert("Post successfully removed")
+				 		STORE._emitChange()
 				 	},
 				 	function(err){
 				 		alert("An error occurred while removing the post")
